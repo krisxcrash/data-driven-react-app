@@ -1,1 +1,3 @@
-# data-driven-react-app
+# RGR Stack
+
+## React, GraphQL, and Relay
