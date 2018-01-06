@@ -1,0 +1,27 @@
+{
+  "name": "rgrjs",
+  "version": "1.0.0",
+  "description": "a collection of educational resources about React, GraphQL, and Relay",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisxcrash/rgr-stack.git"
+  },
+  "author": "kristine martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krisxcrash/rgr-stack/issues"
+  },
+  "homepage": "https://github.com/krisxcrash/rgr-stack#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
