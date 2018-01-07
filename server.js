@@ -1,9 +1,26 @@
-let express = require('express');
+const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
 
 let app = express();
 
-// app.get('/', (req, res) => res.send('hello express!'));
+var url = 'mongodb://rgr_user:1234@ds241737.mlab.com:41737/rgr-stack'
 
 app.use(express.static('public'));
 
-app.listen(3000);
+let db;
+
+MongoClient.connect(url, (err, client) => {
+    if (err) throw err;
+
+    db = client.db('rgr-stack');
+    let collection = db.collection('links');
+
+    app.listen(3001, () => console.log('listening on port 3001'));
+  });
+
+  app.get('/data/links', (req, res) => {
+    db.collection('links').find({}).toArray((err,links) => {
+        if (err) throw err;
+        res.json(links);
+    });
+  })
