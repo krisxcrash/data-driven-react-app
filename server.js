@@ -1,11 +1,17 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
+import schema from './data/schema';
+const GraphQLHTTP = require('express-graphql')
 
 let app = express();
 
 var url = 'mongodb://rgr_user:1234@ds241737.mlab.com:41737/rgr-stack'
 
 app.use(express.static('public'));
+
+app.use('/graphql', GraphQLHTTP({
+  schema
+}))
 
 let db;
 
